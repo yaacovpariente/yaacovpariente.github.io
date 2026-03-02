@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaacov Pariente</title>
+    <link rel="stylesheet" href="assets/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .masthead {
+            background: #fff;
+            border-bottom: 1px solid #e1e4e8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .site-nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: #586069;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .site-nav a:hover {
+            color: #0366d6;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            padding: 2rem 20px;
+        }
+
+        .sidebar {
+            background: #f6f8fa;
+            padding: 2rem;
+            border-radius: 6px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .author-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: block;
+            object-fit: cover;
+            border: 3px solid #e1e4e8;
+        }
+
+        .author-content h3 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: #24292e;
+        }
+
+        .author-content p {
+            text-align: center;
+            color: #586069;
+            margin-bottom: 1.5rem;
+        }
+
+        .author-urls {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .author-urls li {
+            margin-bottom: 0.5rem;
+        }
+
+        .author-urls a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0366d6;
+            text-decoration: none;
+            padding: 0.25rem 0;
+        }
+
+        .author-urls a:hover {
+            text-decoration: underline;
+        }
+
+        .page-content {
+            padding: 0;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.5rem;
+            color: #24292e;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #f6f8fa;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1rem 10px;
+            }
+
+            .sidebar {
+                position: relative;
+                top: auto;
+            }
+
+            .site-nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="masthead">
+        <div class="nav-container">
+            <nav class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="publications.html">Publications</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="sidebar">
+            <div class="author-content">
+                <img src="images/profile.jpeg" alt="Profile Photo" class="author-avatar">
+                <h3>Yaacov Pariente</h3>
+                <p>PhD Student, Applied Mathematics, Technion</p>
+
+                <ul class="author-urls">
+                    <li><a href="https://scholar.google.com/citations?user=VmGnXwYAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i> Google Scholar</a></li>
+                    <li><a href="https://github.com/yaacovpariente" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/yacov-pariente-15a170bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="mailto:yaacovpar@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <main class="page-content">
+
+            <div class="content-section">
+                <h2>About Me</h2>
+                <p>
+                    I am a PhD student in Applied Mathematics at the Technion, advised by Vadim Indelman
+                    in the <a href="https://anpl-technion.github.io/" target="_blank">Autonomous Navigation and Perception Lab</a>.
+                    I hold a B.Sc. in Mathematics and Statistics and an M.A. in Statistics, both from
+                    the Hebrew University of Jerusalem.
+                </p>
+                <p>
+                    My research focuses on safe decision-making and performance acceleration for autonomous
+                    agents operating under uncertainty. I develop planning algorithms for Partially Observable
+                    Markov Decision Processes (POMDPs) — the mathematical framework behind real-time
+                    decision-making when an agent cannot fully observe its environment — with formal
+                    performance guarantees and applications to robotics and AI systems.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>Open-Source Software</h2>
+                <p>
+                    I created <a href="https://github.com/yaacovpariente/POMDPPlanners" target="_blank">POMDPPlanners</a>,
+                    an open-source Python package that unifies leading POMDP planning algorithms in a single
+                    framework — the first Python package to do so. It makes state-of-the-art POMDP planning
+                    algorithms accessible to researchers and practitioners, implements safety-critical benchmark
+                    environments, and supports large-scale distributed simulations. The package is released
+                    under a permissive license for commercial use.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>Research Interests</h2>
+                <ul>
+                    <li>Decision-making under uncertainty</li>
+                    <li>Risk-aware planning for autonomous agents</li>
+                    <li>Acceleration of autonomous agents</li>
+                </ul>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

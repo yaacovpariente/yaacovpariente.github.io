@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Yaacov Pariente</title>
+    <link rel="stylesheet" href="assets/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .masthead {
+            background: #fff;
+            border-bottom: 1px solid #e1e4e8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .site-nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            color: #586069;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .site-nav a:hover, .site-nav a.active {
+            color: #0366d6;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            padding: 2rem 20px;
+        }
+
+        .sidebar {
+            background: #f6f8fa;
+            padding: 2rem;
+            border-radius: 6px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .author-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: block;
+            object-fit: cover;
+            border: 3px solid #e1e4e8;
+        }
+
+        .author-content h3 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: #24292e;
+        }
+
+        .author-content p {
+            text-align: center;
+            color: #586069;
+            margin-bottom: 1.5rem;
+        }
+
+        .author-urls {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .author-urls li {
+            margin-bottom: 0.5rem;
+        }
+
+        .author-urls a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0366d6;
+            text-decoration: none;
+            padding: 0.25rem 0;
+        }
+
+        .author-urls a:hover {
+            text-decoration: underline;
+        }
+
+        .page-content {
+            padding: 0;
+        }
+
+        .page-title {
+            font-size: 2rem;
+            color: #24292e;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 1rem;
+        }
+
+        .publication-item {
+            background: #fff;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .publication-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .pub-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #24292e;
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-title a {
+            color: #24292e;
+            text-decoration: none;
+        }
+
+        .pub-title a:hover {
+            color: #0366d6;
+        }
+
+        .pub-authors {
+            color: #586069;
+            margin-bottom: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .pub-venue {
+            color: #0366d6;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .pub-excerpt {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .pub-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #0366d6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.25rem 0.75rem;
+            border: 1px solid #0366d6;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .pub-links a:hover {
+            background-color: #0366d6;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1rem 10px;
+            }
+            
+            .sidebar {
+                position: relative;
+                top: auto;
+            }
+            
+            .site-nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+            }
+        }
+    </style>
+    <script>
+        function copyBibTeXIcvar() {
+            const bibTeX = `@misc{pariente2026onlineriskaverse,
+      title={Online Risk-Averse Planning in POMDPs Using Iterated CVaR Value Function},
+      author={Yaacov Pariente and Vadim Indelman},
+      year={2026},
+      eprint={2601.20554},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2601.20554},
+}`;
+            navigator.clipboard.writeText(bibTeX).then(function() {
+                alert('BibTeX copied to clipboard!');
+            }, function() {
+                const textArea = document.createElement('textarea');
+                textArea.value = bibTeX;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('BibTeX copied to clipboard!');
+            });
+        }
+        function copyBibTeXPomdp() {
+            const bibTeX = `@misc{pariente2026pomdpplanners,
+      title={POMDPPlanners: Open-Source Package for POMDP Planning},
+      author={Yaacov Pariente and Vadim Indelman},
+      year={2026},
+      eprint={2602.20810},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2602.20810},
+}`;
+            navigator.clipboard.writeText(bibTeX).then(function() {
+                alert('BibTeX copied to clipboard!');
+            }, function() {
+                const textArea = document.createElement('textarea');
+                textArea.value = bibTeX;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('BibTeX copied to clipboard!');
+            });
+        }
+        function copyBibTeXAccelerated() {
+            const bibTeX = `@misc{pariente2026acceleratedonline,
+      title={Accelerated Online Risk-Averse Policy Evaluation in POMDPs with Theoretical Guarantees and Novel CVaR Bounds},
+      author={Yaacov Pariente and Vadim Indelman},
+      year={2026},
+      eprint={2602.23073},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2602.23073},
+}`;
+            navigator.clipboard.writeText(bibTeX).then(function() {
+                alert('BibTeX copied to clipboard!');
+            }, function() {
+                const textArea = document.createElement('textarea');
+                textArea.value = bibTeX;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('BibTeX copied to clipboard!');
+            });
+        }
+        function copyBibTeX() {
+            const bibTeX = `@misc{pariente2025boundingconditionalvalueatriskauxiliary,
+      title={Bounding Conditional Value-at-Risk via Auxiliary Distributions with Bounded Discrepancies}, 
+      author={Yaacov Pariente and Vadim Indelman},
+      year={2025},
+      eprint={2507.18129},
+      archivePrefix={arXiv},
+      primaryClass={math.ST},
+      url={https://arxiv.org/abs/2507.18129}, 
+}`;
+            navigator.clipboard.writeText(bibTeX).then(function() {
+                alert('BibTeX copied to clipboard!');
+            }, function() {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = bibTeX;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('BibTeX copied to clipboard!');
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="masthead">
+        <div class="nav-container">
+            <nav class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="publications.html" class="active">Publications</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="sidebar">
+            <div class="author-content">
+                <img src="images/profile.jpeg" alt="Profile Photo" class="author-avatar">
+                <h3>Yaacov Pariente</h3>
+                <p>PhD Student, Applied Mathematics, Technion</p>
+                
+                <ul class="author-urls">
+                    <li><a href="https://scholar.google.com/citations?user=VmGnXwYAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i> Google Scholar</a></li>
+                    <li><a href="https://github.com/yaacovpariente" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/yacov-pariente-15a170bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="mailto:yaacovpar@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <main class="page-content">
+            <h1 class="page-title">Publications</h1>
+
+            <div class="publication-item">
+                <h3 class="pub-title">
+                    <a href="https://arxiv.org/abs/2601.20554" target="_blank">Online Risk-Averse Planning in POMDPs Using Iterated CVaR Value Function</a>
+                </h3>
+                <p class="pub-authors">Yaacov Pariente, Vadim Indelman</p>
+                <p class="pub-venue">Preprint, 2026</p>
+                <p class="pub-excerpt">
+                    We address risk-sensitive decision-making in partially observable environments using Iterated
+                    Conditional Value-at-Risk (ICVaR). We develop a policy evaluation algorithm and extend three
+                    established online planning methods to optimize ICVaR rather than expected returns, providing
+                    finite-time performance guarantees and demonstrating reduced tail risk compared to conventional
+                    expectation-based approaches.
+                </p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2601.20554" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="#" onclick="copyBibTeXIcvar(); return false;"><i class="fas fa-quote-left"></i> BibTeX</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <h3 class="pub-title">
+                    <a href="https://arxiv.org/abs/2602.20810" target="_blank">Open-Source POMDP Planning Framework</a>
+                </h3>
+                <p class="pub-authors">Yaacov Pariente, Vadim Indelman</p>
+                <p class="pub-venue">Preprint, 2026</p>
+                <p class="pub-excerpt">
+                    We introduce the first comprehensive Python package that integrates all state-of-the-art
+                    POMDP planning algorithms in a single framework. This open-source tool accelerates research
+                    workflows and promotes reproducible research in the community.
+                </p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2602.20810" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="https://github.com/yaacovpariente/POMDPPlanners" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="#" onclick="copyBibTeXPomdp(); return false;"><i class="fas fa-quote-left"></i> BibTeX</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <h3 class="pub-title">
+                    <a href="https://arxiv.org/abs/2602.23073" target="_blank">Accelerated Online Risk-Averse Policy Evaluation in POMDPs with Theoretical Guarantees and Novel CVaR Bounds</a>
+                </h3>
+                <p class="pub-authors">Yaacov Pariente, Vadim Indelman</p>
+                <p class="pub-venue">Preprint, 2026</p>
+                <p class="pub-excerpt">
+                    We address risk-averse decision-making under uncertainty in partially observable domains by
+                    deriving novel distributional bounds on Conditional Value-at-Risk (CVaR) using auxiliary random
+                    variables. We establish upper and lower bounds on the CVaR value function computable from a
+                    simplified belief-MDP, and employ action elimination to safely discard suboptimal choices while
+                    maintaining consistency with the original model, achieving substantial computational speedups.
+                </p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2602.23073" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="#" onclick="copyBibTeXAccelerated(); return false;"><i class="fas fa-quote-left"></i> BibTeX</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <h3 class="pub-title">
+                    <a href="https://arxiv.org/abs/2507.18129" target="_blank">Bounding Conditional Value-at-Risk via Auxiliary Distributions with Bounded Discrepancies</a>
+                </h3>
+                <p class="pub-authors">Yaacov Pariente, Vadim Indelman</p>
+                <p class="pub-venue">Preprint, 2025</p>
+                <p class="pub-excerpt">
+                    The paper proves bounds on the Conditional Value-at-Risk (CVaR), a well-known and widely
+                    used risk measure in the literature, using an auxiliary variable with known properties,
+                    enabling CVaR estimation when direct data is limited or expensive to sample. The approach
+                    provides practical bounds and concentration inequalities, offering tools for controlling
+                    tail risk in risk management and decision-making applications.
+                </p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2507.18129" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="#" onclick="copyBibTeX(); return false;"><i class="fas fa-quote-left"></i> BibTeX</a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
