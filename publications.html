@@ -242,6 +242,28 @@
                 alert('BibTeX copied to clipboard!');
             });
         }
+        function copyBibTeXImmediateCost() {
+            const bibTeX = `@misc{pariente2026riskaverseonline,
+      title={Risk-Averse Online POMDP Planning via CVaR of the Immediate Cost with Performance Guarantees},
+      author={Yaacov Pariente and Vadim Indelman},
+      year={2026},
+      eprint={2609.35874},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2609.35874},
+}`;
+            navigator.clipboard.writeText(bibTeX).then(function() {
+                alert('BibTeX copied to clipboard!');
+            }, function() {
+                const textArea = document.createElement('textarea');
+                textArea.value = bibTeX;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('BibTeX copied to clipboard!');
+            });
+        }
         function copyBibTeXPomdp() {
             const bibTeX = `@misc{pariente2026pomdpplanners,
       title={POMDPPlanners: Open-Source Package for POMDP Planning},
@@ -286,29 +308,6 @@
                 alert('BibTeX copied to clipboard!');
             });
         }
-        function copyBibTeX() {
-            const bibTeX = `@misc{pariente2025boundingconditionalvalueatriskauxiliary,
-      title={Bounding Conditional Value-at-Risk via Auxiliary Distributions with Bounded Discrepancies}, 
-      author={Yaacov Pariente and Vadim Indelman},
-      year={2025},
-      eprint={2507.18129},
-      archivePrefix={arXiv},
-      primaryClass={math.ST},
-      url={https://arxiv.org/abs/2507.18129}, 
-}`;
-            navigator.clipboard.writeText(bibTeX).then(function() {
-                alert('BibTeX copied to clipboard!');
-            }, function() {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = bibTeX;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                alert('BibTeX copied to clipboard!');
-            });
-        }
     </script>
 </head>
 <body>
@@ -339,6 +338,45 @@
 
         <main class="page-content">
             <h1 class="page-title">Publications</h1>
+
+            <div class="publication-item">
+                <h3 class="pub-title">
+                    <a href="https://arxiv.org/abs/2602.23073" target="_blank">Accelerated Online Risk-Averse Policy Evaluation in POMDPs with Theoretical Guarantees and Novel CVaR Bounds</a>
+                </h3>
+                <p class="pub-authors">Yaacov Pariente, Vadim Indelman</p>
+                <p class="pub-venue">JAIR, 2026</p>
+                <p class="pub-excerpt">
+                    We address risk-averse decision-making under uncertainty in partially observable domains by
+                    deriving novel distributional bounds on Conditional Value-at-Risk (CVaR) using auxiliary random
+                    variables. We establish upper and lower bounds on the CVaR value function computable from a
+                    simplified belief-MDP, and employ action elimination to safely discard suboptimal choices while
+                    maintaining consistency with the original model, achieving substantial computational speedups.
+                </p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2602.23073" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="#" onclick="copyBibTeXAccelerated(); return false;"><i class="fas fa-quote-left"></i> BibTeX</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <h3 class="pub-title">
+                    <a href="https://arxiv.org/abs/2609.35874" target="_blank">Risk-Averse Online POMDP Planning via CVaR of the Immediate Cost with Performance Guarantees</a>
+                </h3>
+                <p class="pub-authors">Yaacov Pariente, Vadim Indelman</p>
+                <p class="pub-venue">NeurIPS, 2026</p>
+                <p class="pub-excerpt">
+                    We apply Conditional Value-at-Risk (CVaR) to the immediate cost over the belief at each step,
+                    targeting per-step uncertainty about the current state while keeping the standard expected
+                    cumulative return as the objective. Any expectation-based POMDP planner becomes risk-sensitive
+                    by changing only the cost computation. We prove a finite-time bound on the gap between the
+                    particle belief MDP surrogate and the original POMDP, giving an end-to-end guarantee from the
+                    true POMDP value to the algorithmic estimate.
+                </p>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2609.35874" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <a href="#" onclick="copyBibTeXImmediateCost(); return false;"><i class="fas fa-quote-left"></i> BibTeX</a>
+                </div>
+            </div>
 
             <div class="publication-item">
                 <h3 class="pub-title">
@@ -374,44 +412,6 @@
                     <a href="https://arxiv.org/abs/2602.20810" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                     <a href="https://github.com/yaacovpariente/POMDPPlanners" target="_blank"><i class="fab fa-github"></i> Code</a>
                     <a href="#" onclick="copyBibTeXPomdp(); return false;"><i class="fas fa-quote-left"></i> BibTeX</a>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <h3 class="pub-title">
-                    <a href="https://arxiv.org/abs/2602.23073" target="_blank">Accelerated Online Risk-Averse Policy Evaluation in POMDPs with Theoretical Guarantees and Novel CVaR Bounds</a>
-                </h3>
-                <p class="pub-authors">Yaacov Pariente, Vadim Indelman</p>
-                <p class="pub-venue">Preprint, 2026</p>
-                <p class="pub-excerpt">
-                    We address risk-averse decision-making under uncertainty in partially observable domains by
-                    deriving novel distributional bounds on Conditional Value-at-Risk (CVaR) using auxiliary random
-                    variables. We establish upper and lower bounds on the CVaR value function computable from a
-                    simplified belief-MDP, and employ action elimination to safely discard suboptimal choices while
-                    maintaining consistency with the original model, achieving substantial computational speedups.
-                </p>
-                <div class="pub-links">
-                    <a href="https://arxiv.org/abs/2602.23073" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-                    <a href="#" onclick="copyBibTeXAccelerated(); return false;"><i class="fas fa-quote-left"></i> BibTeX</a>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <h3 class="pub-title">
-                    <a href="https://arxiv.org/abs/2507.18129" target="_blank">Bounding Conditional Value-at-Risk via Auxiliary Distributions with Bounded Discrepancies</a>
-                </h3>
-                <p class="pub-authors">Yaacov Pariente, Vadim Indelman</p>
-                <p class="pub-venue">Preprint, 2025</p>
-                <p class="pub-excerpt">
-                    The paper proves bounds on the Conditional Value-at-Risk (CVaR), a well-known and widely
-                    used risk measure in the literature, using an auxiliary variable with known properties,
-                    enabling CVaR estimation when direct data is limited or expensive to sample. The approach
-                    provides practical bounds and concentration inequalities, offering tools for controlling
-                    tail risk in risk management and decision-making applications.
-                </p>
-                <div class="pub-links">
-                    <a href="https://arxiv.org/abs/2507.18129" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-                    <a href="#" onclick="copyBibTeX(); return false;"><i class="fas fa-quote-left"></i> BibTeX</a>
                 </div>
             </div>
 
